@@ -25,8 +25,8 @@ backup_folder() {
   echo "Checking folder: $FOLDER"
 
   if [ -d "$FOLDER" ]; then
-tar -czf "/home/scripts/$ARCHIVE_NAME" "$FOLDER"
-    mv "/home/scripts/$ARCHIVE_NAME" "$BACKUP_DIR"
+    tar -czf "$ARCHIVE_NAME" "$FOLDER"
+    mv "$ARCHIVE_NAME" "$BACKUP_DIR"
     echo -e "${GREEN}Backup successful for $FOLDER → $BACKUP_DIR/$ARCHIVE_NAME${NC}"
   else
     echo -e "${RED}Folder not found: $FOLDER${NC}"
